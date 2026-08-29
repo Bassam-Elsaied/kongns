@@ -1,0 +1,115 @@
+{
+  "Nav": {
+    "solutions": "Solutions",
+    "work": "Work",
+    "insights": "Insights",
+    "company": "Company",
+    "cta": "Let's Build",
+    "skip": "Skip to content",
+    "open": "Open menu",
+    "close": "Close menu",
+    "language": "العربية",
+    "languageLabel": "Switch to Arabic",
+    "theme": "Toggle theme",
+    "themeLight": "Switch to light mode",
+    "themeDark": "Switch to dark mode"
+  },
+  "Intro": {
+    "skip": "Skip intro",
+    "label": "Intro film"
+  },
+  "Footer": {
+    "tagline": "An engineering-first technology company combining software architecture, artificial intelligence, and product thinking to solve complex operational challenges.",
+    "platform": "Platform",
+    "engagement": "Engagement",
+    "legal": "Legal",
+    "rights": "Kogns. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "Work": {
+    "eyebrow": "Selected Work",
+    "titleLead": "Engineering",
+    "titleTail": "Archive",
+    "subtitle": "A selection of our technical implementations, architectural solutions, and operational outcomes.",
+    "all": "All",
+    "count": "{count, plural, one {# project} other {# projects}}"
+  },
+  "Solutions": {
+    "eyebrow": "Our Capabilities",
+    "titleLead": "What we",
+    "titleTail": "build",
+    "subtitle": "From core systems to intelligent products, we engineer technology around real business needs. Explore our technical domains below.",
+    "coreHeading": "Core Capabilities",
+    "contents": "Capabilities",
+    "deliveredIn": "Delivered in",
+    "count": "{count, plural, one {# project} other {# projects}}"
+  },
+  "Insights": {
+    "eyebrow": "Publication",
+    "titleLead": "Engineering",
+    "titleTail": "Insights",
+    "subtitle": "Technical articles, architectural decisions, and product strategies from the Kogns engineering team.",
+    "all": "All",
+    "count": "{count, plural, one {# article} other {# articles}}",
+    "featured": "Featured",
+    "read": "Read article",
+    "notPublished": "Not published",
+    "draft": "Draft",
+    "relatedSolution": "Related solution",
+    "relatedInsights": "Related insights",
+    "learnMore": "Learn more",
+    "empty": "No articles in this category yet."
+  },
+  "Company": {
+    "titleLead": "Engineering",
+    "titleTail": "native",
+    "philosophy": "Philosophy",
+    "process": "How We Work",
+    "eyebrow": "Who We Are",
+    "careers": "Careers",
+    "platforms": "Delivered platforms",
+    "disciplines": "Engineering disciplines",
+    "industries": "Industries served"
+  },
+  "CaseStudy": {
+    "challenge": "The Challenge",
+    "inside": "Inside the Product",
+    "solution": "The Solution",
+    "eyebrow": "Case study",
+    "discipline": "Discipline",
+    "sector": "Sector",
+    "allProjects": "All projects",
+    "haveProject": "Have a project in mind?",
+    "next": "Next",
+    "related": "Related"
+  },
+  "Legal": {
+    "eyebrow": "Legal",
+    "contents": "Contents",
+    "lastUpdated": "Last updated",
+    "sections": "{count} sections",
+    "alsoRead": "Also read",
+    "read": "Read",
+    "questions": "Questions about this document? Reach us at"
+  },
+  "Cta": {
+    "eyebrow": "Next",
+    "title": "Have a problem worth solving?",
+    "subtitle": "Let's turn your idea, challenge, or opportunity into technology that works.",
+    "action": "Start a Conversation",
+    "email": "hello@kogns.com"
+  },
+  "Booking": {
+    "eyebrow": "Booking",
+    "titleLead": "Tell us about your",
+    "titleTail": "project",
+    "note": "We answer every brief within 48 hours.",
+    "firstName": "First Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Message",
+    "submit": "Submit",
+    "success": "Thanks — your brief is in. We reply within 48 hours."
+  }
+}
