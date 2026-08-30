@@ -181,6 +181,49 @@ html.dark ::-webkit-scrollbar-thumb {
   }
 }
 
+/* Contact chat — bubbles settle in as they are appended, dots mark typing. */
+@keyframes chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.chat-in {
+  animation: chat-in 0.4s var(--motion-ease-out) both;
+}
+
+@keyframes chat-dot {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: none;
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.chat-dot {
+  animation: chat-dot 1.2s var(--motion-ease) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-in {
+    animation: none;
+  }
+  .chat-dot {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
 .nav-ico * {
   transform-box: fill-box;
   transition:

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import BookingSection from "@/components/BookingSection";
+import ContactChat from "@/components/ContactChat";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
@@ -24,7 +24,7 @@ export default async function ContactPage({
       <SiteHeader />
 
       <main className="flex-1">
-        <BookingSection standalone />
+        <ContactChat />
       </main>
 
       <SiteFooter />
