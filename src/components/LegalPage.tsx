@@ -3,8 +3,6 @@ import Container from "@/components/Container";
 import LegalIndex from "@/components/LegalIndex";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
 import {
   getLegalDocuments,
   type LegalDocument,
@@ -25,8 +23,6 @@ export default function LegalPage({ document: doc }: { document: LegalDocument }
 
   return (
     <>
-      <SiteHeader />
-
       <main className="flex-1">
         <PageHeader eyebrow={t("eyebrow")} lead={lead} tail={tail} />
 
@@ -45,7 +41,7 @@ export default function LegalPage({ document: doc }: { document: LegalDocument }
                   </span>
                 </div>
 
-                <p className="mt-10 max-w-160 text-[clamp(19px,2.1vw,26px)] leading-[1.45] font-medium tracking-[-0.02em] text-foreground">
+                <p className="mt-8 max-w-160 text-[15px] leading-[1.7] font-medium tracking-[-0.015em] text-foreground">
                   {doc.intro}
                 </p>
               </Reveal>
@@ -64,10 +60,10 @@ export default function LegalPage({ document: doc }: { document: LegalDocument }
                         </span>
 
                         <div>
-                          <h2 className="text-[24px] leading-[1.2] font-medium tracking-[-0.02em] text-foreground">
+                          <h2 className="text-[18px] leading-[1.3] font-medium tracking-[-0.02em] text-foreground">
                             {section.title}
                           </h2>
-                          <p className="mt-4 max-w-160 text-[16px] leading-[1.75] text-fg-dim">
+                          <p className="mt-3 max-w-160 text-[15px] leading-[1.7] text-fg-dim">
                             {section.body}
                           </p>
                         </div>
@@ -84,7 +80,7 @@ export default function LegalPage({ document: doc }: { document: LegalDocument }
                       <div className="font-mono text-[11px] tracking-[0.16em] text-fg-mute uppercase">
                         {t("alsoRead")}
                       </div>
-                      <h2 className="mt-2 text-xl font-medium tracking-[-0.02em] text-foreground">
+                      <h2 className="mt-2 text-[17px] font-medium tracking-[-0.02em] text-foreground">
                         {other.title}
                       </h2>
                     </div>
@@ -115,8 +111,6 @@ export default function LegalPage({ document: doc }: { document: LegalDocument }
           </div>
         </Container>
       </main>
-
-      <SiteFooter />
     </>
   );
 }

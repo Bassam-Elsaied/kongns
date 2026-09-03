@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   Geist,
   Geist_Mono,
-  IBM_Plex_Sans_Arabic,
   Instrument_Serif,
+  Tajawal,
 } from "next/font/google";
 import { notFound } from "next/navigation";
+import { IntroProvider } from "@/components/IntroContext";
 import IntroOverlay from "@/components/IntroOverlay";
-import ThemeScript from "@/components/ThemeScript";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import { localeDirection, routing } from "@/i18n/routing";
 import "../globals.css";
 
@@ -30,12 +32,16 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-// Geist has no Arabic coverage, so the Arabic locale needs its own face.
-const plexArabic = IBM_Plex_Sans_Arabic({
+// Geist has no Arabic coverage, so the Arabic locale uses Tajawal.
+const tajawal = Tajawal({
   variable: "--font-arabic",
   subsets: ["arabic"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "700", "800", "900"],
 });
+
+export const viewport: Viewport = {
+  colorScheme: "light",
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -67,13 +73,16 @@ export default async function LocaleLayout({
       lang={locale}
       dir={localeDirection[locale]}
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${plexArabic.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${tajawal.variable} h-full antialiased`}
     >
       <body className="grain flex min-h-full flex-col">
-        <ThemeScript />
         <NextIntlClientProvider>
-          <IntroOverlay />
-          {children}
+          <IntroProvider>
+            <IntroOverlay />
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </IntroProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -83,7 +83,7 @@ export default function WorkList() {
                 </span>
 
                 <span>
-                  <h3 className="text-[clamp(28px,4vw,56px)] leading-none font-medium tracking-[-0.03em]">
+                  <h3 className="text-[clamp(20px,2.8vw,28px)] leading-[1.2] font-medium tracking-[-0.025em]">
                     {project.name}
                   </h3>
                   <span className="mt-2 block font-mono text-[11px] tracking-[0.06em] text-fg-mute">

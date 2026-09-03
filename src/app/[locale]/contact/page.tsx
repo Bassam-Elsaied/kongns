@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import ContactChat from "@/components/ContactChat";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
 
 export async function generateMetadata({
   params,
@@ -21,13 +19,9 @@ export default async function ContactPage({
 
   return (
     <>
-      <SiteHeader />
-
       <main className="flex-1">
         <ContactChat />
       </main>
-
-      <SiteFooter />
     </>
   );
 }

@@ -10,7 +10,7 @@ function Fact({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-2">
       <span className={EYEBROW}>{label}</span>
-      <span className="text-base">{children}</span>
+      <span className="text-[14px] leading-[1.5]">{children}</span>
     </div>
   );
 }
@@ -20,14 +20,6 @@ export default function CaseStudyHero({ project }: { project: Project }) {
 
   return (
     <section className="relative overflow-hidden bg-background-2 pt-50 pb-20 max-[720px]:pt-36">
-      {/* The project tint only paints the hero in dark mode; in light mode the
-          banner stays on the neutral surface so it harmonises with the page. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 hidden dark:block"
-        style={{ background: project.tint }}
-      />
-
       <Container className="relative z-1">
         <div className="mb-6 flex justify-between gap-4">
           <span className={EYEBROW}>
@@ -37,11 +29,11 @@ export default function CaseStudyHero({ project }: { project: Project }) {
           <span className={`${EYEBROW} text-end`}>{project.sector}</span>
         </div>
 
-        <h1 className="text-[clamp(56px,10vw,200px)] leading-[0.85] font-medium tracking-tighter">
+        <h1 className="text-[clamp(32px,5vw,52px)] leading-[1.15] font-medium tracking-[-0.03em]">
           {project.name}
         </h1>
 
-        <p className="mt-8 max-w-180 text-[clamp(18px,2vw,28px)] leading-[1.4] text-fg-dim">
+        <p className="mt-5 max-w-180 text-[15px] leading-[1.7] text-fg-dim">
           {project.summary}
         </p>
 

@@ -61,7 +61,7 @@ export default function CaseStudySidebar({ project }: { project: Project }) {
           <span className="me-2 inline-block size-1.5 rounded-full bg-brand align-middle shadow-[0_0_12px_var(--brand)]" />
           {t("next")}
         </div>
-        <div className="mt-3 mb-5 text-2xl leading-[1.15] tracking-[-0.02em] text-foreground">
+        <div className="mt-3 mb-5 text-[18px] leading-[1.3] tracking-[-0.02em] text-foreground">
           {t("haveProject")}
         </div>
         <Link

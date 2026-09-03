@@ -2,21 +2,20 @@
   "Nav": {
     "solutions": "Solutions",
     "work": "Work",
-    "insights": "Insights",
+    "insights": "Vision",
     "company": "Company",
+    "contact": "Contact",
     "cta": "Let's Build",
     "skip": "Skip to content",
     "open": "Open menu",
     "close": "Close menu",
     "language": "العربية",
-    "languageLabel": "Switch to Arabic",
-    "theme": "Toggle theme",
-    "themeLight": "Switch to light mode",
-    "themeDark": "Switch to dark mode"
+    "languageLabel": "Switch to Arabic"
   },
   "Intro": {
     "skip": "Skip intro",
-    "label": "Intro film"
+    "label": "Intro film",
+    "loading": "Loading"
   },
   "Footer": {
     "tagline": "An engineering-first technology company combining software architecture, artificial intelligence, and product thinking to solve complex operational challenges.",
@@ -121,11 +120,7 @@
     "placeholderEmail": "name@company.com",
     "placeholderPhone": "+966 5X XXX XXXX",
     "placeholderMessage": "Tell us about the project…",
-    "topics": [
-      "AI & automation",
-      "Platform engineering",
-      "Product & design"
-    ],
+    "topics": ["AI & automation", "Platform engineering", "Product & design"],
     "skip": "Skip this",
     "skipped": "Skip for now",
     "send": "Send",

@@ -6,8 +6,6 @@ import CaseStudyHero from "@/components/CaseStudyHero";
 import CaseStudySidebar from "@/components/CaseStudySidebar";
 import Container from "@/components/Container";
 import ScreenFrame from "@/components/ScreenFrame";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
 import { getProject, getProjects } from "@/components/data/projects";
 import { routing, toLocale } from "@/i18n/routing";
 
@@ -29,7 +27,7 @@ export async function generateMetadata({
 }
 
 const SECTION_HEADING =
-  "text-[32px] leading-[1.1] font-medium tracking-[-0.02em] text-foreground";
+  "text-[clamp(22px,3vw,28px)] leading-[1.25] font-medium tracking-[-0.02em] text-foreground";
 
 export default async function CaseStudyPage({
   params,
@@ -44,8 +42,6 @@ export default async function CaseStudyPage({
 
   return (
     <>
-      <SiteHeader />
-
       <main className="flex-1">
         <article>
           <CaseStudyHero project={project} />
@@ -62,7 +58,7 @@ export default async function CaseStudyPage({
             </figure>
 
             <div className="grid grid-cols-[1fr_360px] items-start gap-16 py-20 max-[960px]:grid-cols-1 max-[960px]:gap-10 max-[720px]:py-12">
-              <div className="text-[17px] leading-[1.7] text-fg-dim">
+              <div className="text-[15px] leading-[1.7] text-fg-dim">
                 <h2 className={SECTION_HEADING}>{t("challenge")}</h2>
                 <p className="mt-[1.2em]">{project.challenge}</p>
 
@@ -85,7 +81,7 @@ export default async function CaseStudyPage({
                         {String(index + 1).padStart(2, "0")} — {feature.key}
                       </div>
 
-                      <h3 className="mt-4 text-2xl leading-[1.15] font-medium tracking-[-0.02em] text-foreground">
+                      <h3 className="mt-3 text-[18px] leading-[1.3] font-medium tracking-[-0.02em] text-foreground">
                         {feature.title}
                       </h3>
                       <p className="mt-3">{feature.description}</p>
@@ -117,7 +113,6 @@ export default async function CaseStudyPage({
         </article>
       </main>
 
-      <SiteFooter />
     </>
   );
 }

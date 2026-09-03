@@ -43,7 +43,7 @@ export default function BookingSection({
             {t("eyebrow")}
           </div>
 
-          <h2 className="mt-4 text-[clamp(40px,6vw,96px)] leading-[0.95] font-medium tracking-[-0.04em]">
+          <h2 className="mt-4 text-[clamp(26px,4vw,40px)] leading-[1.2] font-medium tracking-[-0.03em]">
             {t("titleLead")}{" "}
             <em className="font-serif font-normal tracking-[-0.02em] italic">
               {t("titleTail")}
@@ -51,7 +51,7 @@ export default function BookingSection({
             .
           </h2>
 
-          <p className="mt-5 max-w-130 text-fg-dim">{t("note")}</p>
+          <p className="mt-4 max-w-130 text-[15px] leading-[1.7] text-fg-dim">{t("note")}</p>
         </Reveal>
 
         <div className="mt-12 max-w-220">

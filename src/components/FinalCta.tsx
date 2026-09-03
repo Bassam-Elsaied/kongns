@@ -26,7 +26,7 @@ export default function FinalCta() {
     <section
       ref={sectionRef}
       onMouseMove={trackPointer}
-      className="relative overflow-hidden py-40 text-center max-[720px]:py-24"
+      className="relative overflow-hidden py-24 text-center max-[720px]:py-16"
     >
       <div
         aria-hidden="true"
@@ -44,11 +44,11 @@ export default function FinalCta() {
             {t("eyebrow")}
           </div>
 
-          <h2 className="mx-auto mt-6 max-w-[16ch] text-[clamp(44px,7.5vw,128px)] leading-[0.95] font-medium tracking-tighter">
+          <h2 className="mx-auto mt-5 max-w-[18ch] text-[clamp(28px,4.5vw,44px)] leading-[1.2] font-medium tracking-[-0.03em]">
             {t("title")}
           </h2>
 
-          <p className="mx-auto mt-7 max-w-140 text-lg leading-[1.55] text-fg-dim">
+          <p className="mx-auto mt-5 max-w-140 text-[15px] leading-[1.7] text-fg-dim">
             {t("subtitle")}
           </p>
         </Reveal>

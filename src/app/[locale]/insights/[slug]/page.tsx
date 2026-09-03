@@ -3,8 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import FinalCta from "@/components/FinalCta";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
 import { getCapability } from "@/components/data/capabilities";
 import {
   formatInsightDate,
@@ -36,7 +34,7 @@ export async function generateMetadata({
 
 function Prose({ blocks }: { blocks: Block[] }) {
   return (
-    <div className="text-[17px] leading-[1.75] text-fg-dim">
+    <div className="text-[15px] leading-[1.75] text-fg-dim">
       {blocks.map((block, index) => {
         if (block.type === "heading") {
           const Tag = block.level === 2 ? "h2" : "h3";
@@ -45,8 +43,8 @@ function Prose({ blocks }: { blocks: Block[] }) {
               key={index}
               className={
                 block.level === 2
-                  ? "mt-[1.8em] mb-[0.6em] text-[28px] leading-[1.15] font-medium tracking-[-0.025em] text-foreground"
-                  : "mt-[1.5em] mb-[0.5em] text-xl font-medium tracking-[-0.015em] text-foreground"
+                  ? "mt-[1.6em] mb-[0.5em] text-[22px] leading-[1.3] font-medium tracking-[-0.02em] text-foreground"
+                  : "mt-[1.4em] mb-[0.45em] text-[17px] font-medium tracking-[-0.015em] text-foreground"
               }
             >
               {block.text}
@@ -104,11 +102,9 @@ export default async function InsightPage({
 
   return (
     <>
-      <SiteHeader />
-
       <main className="flex-1">
         <article>
-          <header className="pt-50 pb-14 max-[720px]:pt-36">
+          <header className="pt-40 pb-10 max-[720px]:pt-32">
             <Container>
               <Link
                 href="/insights"
@@ -118,11 +114,11 @@ export default async function InsightPage({
                 {nav("insights")}
               </Link>
 
-              <h1 className="mt-8 max-w-[18ch] text-[clamp(38px,6vw,84px)] leading-[0.98] font-medium tracking-[-0.04em]">
+              <h1 className="mt-5 max-w-[28ch] text-[clamp(28px,4.5vw,44px)] leading-[1.2] font-medium tracking-[-0.03em]">
                 {insight.title}
               </h1>
 
-              <p className="mt-7 max-w-160 text-[19px] leading-[1.5] text-fg-dim">
+              <p className="mt-5 max-w-160 text-[15px] leading-[1.7] text-fg-dim">
                 {insight.excerpt}
               </p>
 
@@ -149,7 +145,7 @@ export default async function InsightPage({
                     <div className="font-mono text-[11px] tracking-[0.16em] text-fg-mute uppercase">
                       {t("relatedSolution")}
                     </div>
-                    <h2 className="mt-3 text-lg leading-snug font-medium text-foreground">
+                    <h2 className="mt-3 text-[16px] leading-snug font-medium text-foreground">
                       {capability.title}
                     </h2>
                     <Link
@@ -194,7 +190,6 @@ export default async function InsightPage({
         </article>
       </main>
 
-      <SiteFooter />
     </>
   );
 }

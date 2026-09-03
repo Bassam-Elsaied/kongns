@@ -6,8 +6,6 @@ import Container from "@/components/Container";
 import FinalCta from "@/components/FinalCta";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
 import {
   getCapabilities,
   projectsForCapability,
@@ -39,8 +37,6 @@ export default async function SolutionsPage({
 
   return (
     <>
-      <SiteHeader />
-
       <main className="flex-1">
         <PageHeader
           eyebrow={t("eyebrow")}
@@ -84,10 +80,10 @@ export default async function SolutionsPage({
                         )}
                       </div>
 
-                      <h2 className="mt-6 text-[clamp(30px,3.6vw,52px)] leading-[1.02] font-medium tracking-[-0.035em]">
+                      <h2 className="mt-5 text-[clamp(22px,3vw,32px)] leading-[1.25] font-medium tracking-[-0.03em]">
                         {capability.title}
                       </h2>
-                      <p className="mt-6 max-w-160 text-[17px] leading-[1.7] text-fg-dim">
+                      <p className="mt-4 max-w-160 text-[15px] leading-[1.7] text-fg-dim">
                         {capability.description}
                       </p>
                     </Reveal>
@@ -163,7 +159,6 @@ export default async function SolutionsPage({
         <FinalCta />
       </main>
 
-      <SiteFooter />
     </>
   );
 }

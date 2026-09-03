@@ -125,7 +125,7 @@ export default function InsightList() {
                 <span className="relative font-mono text-[11px] tracking-[0.16em] text-fg-mute uppercase">
                   {t("featured")}
                 </span>
-                <span className="latin relative mt-16 block font-serif text-[clamp(72px,10vw,140px)] leading-none text-foreground/8 italic">
+                <span className="latin relative mt-10 block font-serif text-[clamp(48px,7vw,80px)] leading-none text-foreground/8 italic">
                   01
                 </span>
               </div>
@@ -133,11 +133,11 @@ export default function InsightList() {
               <div className="flex flex-col justify-center p-10 max-[720px]:p-7">
                 <Meta insight={featured} />
 
-                <h2 className="mt-5 text-[clamp(26px,3.2vw,40px)] leading-[1.08] font-medium tracking-[-0.03em] transition-colors duration-250 group-hover:text-brand-2">
+                <h2 className="mt-4 text-[clamp(20px,2.6vw,28px)] leading-[1.25] font-medium tracking-[-0.025em] transition-colors duration-250 group-hover:text-brand-2">
                   {featured.title}
                 </h2>
 
-                <p className="mt-4 text-[17px] leading-[1.6] text-fg-dim">
+                <p className="mt-3 text-[15px] leading-[1.7] text-fg-dim">
                   {featured.excerpt}
                 </p>
 
@@ -165,11 +165,11 @@ export default function InsightList() {
 
                 <Meta insight={insight} />
 
-                <h3 className="mt-4 text-[22px] leading-[1.2] font-medium tracking-[-0.02em] transition-colors duration-250 group-hover:text-brand-2">
+                <h3 className="mt-4 text-[18px] leading-[1.3] font-medium tracking-[-0.02em] transition-colors duration-250 group-hover:text-brand-2">
                   {insight.title}
                 </h3>
 
-                <p className="mt-3 flex-1 text-[15px] leading-[1.6] text-fg-dim">
+                <p className="mt-3 flex-1 text-[14px] leading-[1.7] text-fg-dim">
                   {insight.excerpt}
                 </p>
 

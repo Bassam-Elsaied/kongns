@@ -177,7 +177,7 @@ export default function ContactChat() {
                 {t("eyebrow")}
               </div>
 
-              <h1 className="mt-4 text-[clamp(38px,4.6vw,72px)] leading-[0.98] font-medium tracking-[-0.04em]">
+              <h1 className="mt-4 text-[clamp(28px,4.5vw,44px)] leading-[1.2] font-medium tracking-[-0.03em]">
                 {t("titleLead")}{" "}
                 <em className="font-serif font-normal tracking-[-0.02em] italic">
                   {t("titleTail")}
@@ -185,7 +185,7 @@ export default function ContactChat() {
                 .
               </h1>
 
-              <p className="mt-6 max-w-110 text-[16px] leading-[1.75] text-fg-dim">
+              <p className="mt-5 max-w-110 text-[15px] leading-[1.7] text-fg-dim">
                 {t("note")}
               </p>
 
@@ -195,7 +195,7 @@ export default function ContactChat() {
                 </div>
                 <a
                   href={`mailto:${tCta("email")}`}
-                  className="group latin mt-2 inline-flex items-center gap-2 text-[17px] text-foreground transition-colors duration-250 ease-smooth hover:text-brand"
+                  className="group latin mt-2 inline-flex items-center gap-2 text-[15px] text-foreground transition-colors duration-250 ease-smooth hover:text-brand"
                 >
                   {tCta("email")}
                   <ArrowRight size={14} className={ARROW_NUDGE_SM} />

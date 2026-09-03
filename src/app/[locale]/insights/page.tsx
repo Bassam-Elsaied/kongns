@@ -3,8 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import FinalCta from "@/components/FinalCta";
 import InsightList from "@/components/InsightList";
 import PageHeader from "@/components/PageHeader";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
 
 export async function generateMetadata({
   params,
@@ -28,8 +26,6 @@ export default async function InsightsPage({
 
   return (
     <>
-      <SiteHeader />
-
       <main className="flex-1">
         <PageHeader
           eyebrow={t("eyebrow")}
@@ -41,8 +37,6 @@ export default async function InsightsPage({
         <InsightList />
         <FinalCta />
       </main>
-
-      <SiteFooter />
     </>
   );
 }

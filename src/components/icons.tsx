@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 type IconProps = {
   size?: number;
   className?: string;
@@ -58,47 +60,6 @@ export function ArrowDiagonal({ size = 16, className = "" }: IconProps) {
   );
 }
 
-export function Sun({ size = 16, className = "" }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className={className}
-    >
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
-      <path
-        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-export function Moon({ size = 16, className = "" }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className={className}
-    >
-      <path
-        d="M20 14.5A8 8 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export function Facebook({ size = 16, className = "" }: IconProps) {
   return (
     <svg
@@ -129,118 +90,157 @@ export function LinkedIn({ size = 16, className = "" }: IconProps) {
   );
 }
 
-const NAV_ICON_CLASS = "nav-ico size-3.5 shrink-0 overflow-visible";
+const NAV_ICON_CLASS = "nav-ico size-4 shrink-0 overflow-visible";
 
-function WorkNavIcon() {
+function NavGrad({ id }: { id: string }) {
+  return (
+    <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#06b6d4" />
+      <stop offset="50%" stopColor="#2563eb" />
+      <stop offset="100%" stopColor="#a855ff" />
+    </linearGradient>
+  );
+}
+
+function WorkNavIcon({ gradId }: { gradId: string }) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={NAV_ICON_CLASS}>
-      <rect
-        x="1.75"
-        y="5.75"
-        width="12.5"
-        height="8"
-        rx="1.6"
-        stroke="currentColor"
-        strokeWidth="1.35"
-      />
-      <path
-        d="M1.75 8.75h12.5"
-        stroke="currentColor"
-        strokeWidth="1.35"
-      />
-      <path
-        className="nav-ico-work-handle"
-        d="M5.4 5.75V4.35A2.1 2.1 0 0 1 7.5 2.25h1A2.1 2.1 0 0 1 10.6 4.35v1.4"
-        stroke="currentColor"
-        strokeWidth="1.35"
-        strokeLinecap="round"
-      />
+      <defs>
+        <NavGrad id={gradId} />
+      </defs>
+      <g stroke={`url(#${gradId})`} strokeWidth="1.35">
+        <rect x="1.75" y="5.75" width="12.5" height="8" rx="1.6" />
+        <path d="M1.75 8.75h12.5" />
+        <path
+          className="nav-ico-work-handle"
+          d="M5.4 5.75V4.35A2.1 2.1 0 0 1 7.5 2.25h1A2.1 2.1 0 0 1 10.6 4.35v1.4"
+          strokeLinecap="round"
+        />
+      </g>
     </svg>
   );
 }
 
-function SolutionsNavIcon() {
+function SolutionsNavIcon({ gradId }: { gradId: string }) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={NAV_ICON_CLASS}>
-      <rect
-        className="nav-ico-sol-1"
-        x="3.25"
-        y="2.25"
-        width="9.5"
-        height="3.1"
-        rx="1"
-        stroke="currentColor"
-        strokeWidth="1.35"
-      />
-      <rect
-        className="nav-ico-sol-2"
-        x="2.25"
-        y="6.45"
-        width="11.5"
-        height="3.1"
-        rx="1"
-        stroke="currentColor"
-        strokeWidth="1.35"
-      />
-      <rect
-        className="nav-ico-sol-3"
-        x="3.25"
-        y="10.65"
-        width="9.5"
-        height="3.1"
-        rx="1"
-        stroke="currentColor"
-        strokeWidth="1.35"
-      />
+      <defs>
+        <NavGrad id={gradId} />
+      </defs>
+      <g stroke={`url(#${gradId})`} strokeWidth="1.35">
+        <rect className="nav-ico-sol-1" x="3.25" y="2.25" width="9.5" height="3.1" rx="1" />
+        <rect className="nav-ico-sol-2" x="2.25" y="6.45" width="11.5" height="3.1" rx="1" />
+        <rect className="nav-ico-sol-3" x="3.25" y="10.65" width="9.5" height="3.1" rx="1" />
+      </g>
     </svg>
   );
 }
 
-function InsightsNavIcon() {
+function InsightsNavIcon({ gradId }: { gradId: string }) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={NAV_ICON_CLASS}>
-      <path
-        className="nav-ico-bar nav-ico-bar-1"
-        d="M3.25 12.5V8.5"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-      />
-      <path
-        className="nav-ico-bar nav-ico-bar-2"
-        d="M8 12.5V3.5"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-      />
-      <path
-        className="nav-ico-bar nav-ico-bar-3"
-        d="M12.75 12.5V6.25"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-      />
+      <defs>
+        <NavGrad id={gradId} />
+      </defs>
+      <g stroke={`url(#${gradId})`} strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+        <path
+          className="nav-ico-eye"
+          d="M1.7 8c1.9-3.4 4.1-5 6.3-5s4.4 1.6 6.3 5c-1.9 3.4-4.1 5-6.3 5s-4.4-1.6-6.3-5z"
+        />
+        <circle
+          className="nav-ico-pupil"
+          cx="8"
+          cy="8"
+          r="1.7"
+          fill={`url(#${gradId})`}
+          stroke="none"
+        />
+      </g>
     </svg>
   );
 }
 
-function CompanyNavIcon() {
+function ContactNavIcon({ gradId }: { gradId: string }) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={NAV_ICON_CLASS}>
-      <path
-        d="M3.25 13.5V4.6c0-.6.5-1.1 1.1-1.1h7.3c.6 0 1.1.5 1.1 1.1v8.9"
-        stroke="currentColor"
-        strokeWidth="1.35"
-        strokeLinejoin="round"
-      />
-      <path d="M1.75 13.5h12.5" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" />
-      <path
-        className="nav-ico-win"
-        d="M6.1 6.2h1.3M8.6 6.2h1.3M6.1 8.7h1.3M8.6 8.7h1.3M6.1 11.2h1.3M8.6 11.2h1.3"
-        stroke="currentColor"
-        strokeWidth="1.35"
-        strokeLinecap="round"
-      />
+      <defs>
+        <NavGrad id={gradId} />
+      </defs>
+      <g stroke={`url(#${gradId})`} strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+        <path
+          className="nav-ico-chat"
+          d="M3.1 3.2h9.8c.8 0 1.4.6 1.4 1.4v5.1c0 .8-.6 1.4-1.4 1.4H7.1L4.2 13.5V11.1H3.1c-.8 0-1.4-.6-1.4-1.4V4.6c0-.8.6-1.4 1.4-1.4z"
+        />
+        <path
+          className="nav-ico-dot nav-ico-dot-1"
+          d="M5.2 7.1h.01"
+          strokeWidth="2"
+        />
+        <path
+          className="nav-ico-dot nav-ico-dot-2"
+          d="M8 7.1h.01"
+          strokeWidth="2"
+        />
+        <path
+          className="nav-ico-dot nav-ico-dot-3"
+          d="M10.8 7.1h.01"
+          strokeWidth="2"
+        />
+      </g>
+    </svg>
+  );
+}
+
+function PrivacyNavIcon({ gradId }: { gradId: string }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={NAV_ICON_CLASS}>
+      <defs>
+        <NavGrad id={gradId} />
+      </defs>
+      <g stroke={`url(#${gradId})`} strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+        <path
+          className="nav-ico-shield"
+          d="M8 2.3 3.4 4.2v4.1c0 3 2 4.8 4.6 5.4 2.6-.6 4.6-2.4 4.6-5.4V4.2L8 2.3z"
+        />
+        <path className="nav-ico-check" d="M6.1 8.1 7.4 9.4 10 6.6" />
+      </g>
+    </svg>
+  );
+}
+
+function TermsNavIcon({ gradId }: { gradId: string }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={NAV_ICON_CLASS}>
+      <defs>
+        <NavGrad id={gradId} />
+      </defs>
+      <g stroke={`url(#${gradId})`} strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+        <path
+          className="nav-ico-doc"
+          d="M4.2 2.4h5.2L12 5.1v8.5H4.2V2.4z"
+        />
+        <path d="M9.3 2.4v2.8H12" />
+        <path className="nav-ico-line nav-ico-line-1" d="M6 9h4.2" />
+        <path className="nav-ico-line nav-ico-line-2" d="M6 11.2h3.2" />
+      </g>
+    </svg>
+  );
+}
+
+function CompanyNavIcon({ gradId }: { gradId: string }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={NAV_ICON_CLASS}>
+      <defs>
+        <NavGrad id={gradId} />
+      </defs>
+      <g stroke={`url(#${gradId})`} strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3.25 13.5V4.6c0-.6.5-1.1 1.1-1.1h7.3c.6 0 1.1.5 1.1 1.1v8.9" />
+        <path d="M1.75 13.5h12.5" />
+        <path
+          className="nav-ico-win"
+          d="M6.1 6.2h1.3M8.6 6.2h1.3M6.1 8.7h1.3M8.6 8.7h1.3M6.1 11.2h1.3M8.6 11.2h1.3"
+        />
+      </g>
     </svg>
   );
 }
@@ -250,6 +250,9 @@ const NAV_ICONS = {
   solutions: SolutionsNavIcon,
   insights: InsightsNavIcon,
   company: CompanyNavIcon,
+  contact: ContactNavIcon,
+  privacy: PrivacyNavIcon,
+  terms: TermsNavIcon,
 } as const;
 
 export function NavLinkIcon({
@@ -258,7 +261,8 @@ export function NavLinkIcon({
   name: keyof typeof NAV_ICONS;
 }) {
   const Icon = NAV_ICONS[name];
-  return <Icon />;
+  const uid = useId().replace(/:/g, "");
+  return <Icon gradId={`nav-grad-${name}-${uid}`} />;
 }
 
 export function Upwork({ size = 16, className = "" }: IconProps) {

@@ -4,8 +4,6 @@ import Container from "@/components/Container";
 import FinalCta from "@/components/FinalCta";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
 import { getCapabilities } from "@/components/data/capabilities";
 import { getCompany } from "@/components/data/company";
 import { getProjects } from "@/components/data/projects";
@@ -29,7 +27,7 @@ const SECTION_LABEL =
   "font-mono text-[11px] tracking-[0.16em] text-fg-mute uppercase";
 
 const SECTION_TITLE =
-  "text-[clamp(30px,4vw,56px)] leading-none font-medium tracking-[-0.035em]";
+  "text-[clamp(22px,3vw,32px)] leading-[1.2] font-medium tracking-[-0.03em]";
 
 export default async function CompanyPage({
   params,
@@ -56,8 +54,6 @@ export default async function CompanyPage({
 
   return (
     <>
-      <SiteHeader />
-
       <main className="flex-1">
         <PageHeader
           eyebrow={t("eyebrow")}
@@ -67,7 +63,7 @@ export default async function CompanyPage({
 
         <Container>
           <Reveal>
-            <p className="max-w-[24ch] text-[clamp(24px,3.2vw,44px)] leading-[1.2] font-medium tracking-[-0.03em] text-foreground max-[720px]:max-w-none">
+            <p className="max-w-[48ch] text-[17px] leading-[1.65] font-medium tracking-[-0.015em] text-foreground max-[720px]:max-w-none">
               {company.intro}
             </p>
           </Reveal>
@@ -80,7 +76,7 @@ export default async function CompanyPage({
                   className="flex flex-col gap-1 bg-background-2 px-7 py-8"
                 >
                   <dt className={SECTION_LABEL}>{figure.label}</dt>
-                  <dd className="latin font-serif text-[clamp(40px,5vw,64px)] leading-none text-brand-2 italic">
+                  <dd className="latin font-serif text-[clamp(28px,3.4vw,40px)] leading-none text-brand-2 italic">
                     {figure.value}
                   </dd>
                 </div>
@@ -110,11 +106,11 @@ export default async function CompanyPage({
                         <span className="font-mono text-[11px] text-brand-2 tabular-nums">
                           {String(index + 1).padStart(2, "0")}
                         </span>
-                        <h3 className="text-2xl font-medium tracking-[-0.02em] text-foreground">
+                        <h3 className="text-[18px] font-medium tracking-[-0.02em] text-foreground">
                           {principle.title}
                         </h3>
                       </div>
-                      <p className="mt-4 text-[16px] leading-[1.7] text-fg-dim">
+                      <p className="mt-3 text-[15px] leading-[1.7] text-fg-dim">
                         {principle.description}
                       </p>
                     </div>
@@ -150,11 +146,11 @@ export default async function CompanyPage({
                         <div className="font-mono text-[11px] tracking-[0.16em] text-brand-2">
                           {step.step}
                         </div>
-                        <h3 className="mt-2 text-xl leading-snug font-medium tracking-[-0.015em] text-foreground">
+                        <h3 className="mt-2 text-[17px] leading-snug font-medium tracking-[-0.015em] text-foreground">
                           {step.title}
                         </h3>
                       </div>
-                      <p className="max-w-160 text-[16px] leading-[1.75] text-fg-dim">
+                      <p className="max-w-160 text-[15px] leading-[1.7] text-fg-dim">
                         {step.description}
                       </p>
                     </div>
@@ -177,10 +173,10 @@ export default async function CompanyPage({
                 <div className="relative grid grid-cols-[1fr_auto] items-end gap-10 max-[800px]:grid-cols-1 max-[800px]:items-start">
                   <div>
                     <span className={SECTION_LABEL}>{t("careers")}</span>
-                    <h2 className="mt-4 max-w-[16ch] text-[clamp(28px,3.6vw,48px)] leading-[1.05] font-medium tracking-[-0.03em]">
+                    <h2 className="mt-4 max-w-[20ch] text-[clamp(22px,3vw,32px)] leading-[1.25] font-medium tracking-[-0.03em]">
                       {company.careers.title}
                     </h2>
-                    <p className="mt-5 max-w-140 text-[16px] leading-[1.7] text-fg-dim">
+                    <p className="mt-4 max-w-140 text-[15px] leading-[1.7] text-fg-dim">
                       {company.careers.description}
                     </p>
                   </div>
@@ -201,7 +197,6 @@ export default async function CompanyPage({
         <FinalCta />
       </main>
 
-      <SiteFooter />
     </>
   );
 }

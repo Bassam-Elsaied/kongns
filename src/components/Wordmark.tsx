@@ -36,13 +36,10 @@ function LogoMark({ gradientId }: { gradientId: string }) {
 
 export default function Wordmark({
   size = "nav",
-  tone = "light",
 }: {
   size?: "nav" | "footer";
-  tone?: "light" | "dark";
 }) {
   const footer = size === "footer";
-  const dark = tone === "dark";
 
   return (
     <Link
@@ -50,7 +47,7 @@ export default function Wordmark({
       dir="ltr"
       aria-label="KOGNS"
       className={`latin group inline-flex items-center leading-none ${
-        footer ? "h-11 gap-3" : "h-9 gap-2.5"
+        footer ? "h-11 gap-3" : "h-7 gap-2"
       }`}
     >
       <LogoMark gradientId={footer ? "k-grad-footer" : "k-grad-nav"} />
@@ -58,14 +55,14 @@ export default function Wordmark({
       <span className="flex flex-col">
         <span
           className={`font-semibold tracking-[-0.03em] text-foreground ${
-            footer ? "text-2xl" : "text-xl"
+            footer ? "text-2xl" : "text-lg"
           }`}
         >
           KOGNS
         </span>
         <span
-          className={`-mt-0.5 font-mono tracking-widest text-fg-mute uppercase ${
-            footer ? "text-[4px]" : "text-[4px]"
+          className={`-mt-0.5 font-mono tracking-[0.22em] text-fg-mute uppercase ${
+            footer ? "text-[8px]" : "text-[3px]"
           }`}
         >
           Engineering • Intelligence
