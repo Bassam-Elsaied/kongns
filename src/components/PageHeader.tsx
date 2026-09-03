@@ -18,7 +18,7 @@ export default function PageHeader({
   subtitle?: string;
 }) {
   return (
-    <section className="relative pt-40 pb-16 max-[720px]:pt-32 max-[720px]:pb-12">
+    <section className="relative pt-30 pb-16 max-[720px]:pt-32 max-[720px]:pb-12">
       <Container>
         <Reveal>
           <div className="font-mono text-[10px] font-medium tracking-[0.16em] text-fg-mute uppercase">

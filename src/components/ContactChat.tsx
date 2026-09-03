@@ -167,7 +167,7 @@ export default function ContactChat() {
   const answered = step === "done" ? FIELDS.length : FIELDS.indexOf(step);
 
   return (
-    <section className="pt-44 pb-24 max-[980px]:pt-36 max-[720px]:pb-14">
+    <section className="pt-35 pb-24 max-[980px]:pt-36 max-[720px]:pb-14">
       <Container>
         <div className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] items-start gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-10">
           <Reveal>
@@ -234,7 +234,9 @@ export default function ContactChat() {
                     <span
                       key={field}
                       className={`h-1 rounded-full transition-all duration-500 ease-smooth ${
-                        index < answered ? "w-5 bg-brand" : "w-2.5 bg-line-strong"
+                        index < answered
+                          ? "w-5 bg-brand"
+                          : "w-2.5 bg-line-strong"
                       }`}
                     />
                   ))}
